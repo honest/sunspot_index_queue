@@ -90,6 +90,7 @@ module Sunspot
       klass, id = class_and_id(record_or_hash)
       Entry.enqueue(self, klass, id, true, options[:priority] || self.class.default_priority)
     end
+    alias_method :remove_from_index, :remove
 
     # Add a list of records to be indexed to the queue. The priority to be indexed can be passed in the
     # options as +:priority+ (defaults to 0).
